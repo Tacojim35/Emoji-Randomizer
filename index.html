@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emoji Popper</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #181818;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 40px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 14px 28px;
+            font-size: 18px;
+            background-color: #333333;
+            color: white;
+            border: 2px solid #666666;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #454545;
+        }
+
+        #emoji {
+            margin-top: 60px;
+            font-size: 100px;
+            min-height: 120px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Emoji Popper</h1>
+
+    <p>Press the button to bring up an emoji.</p>
+
+    <button onclick="changeEmoji()">Press Me!</button>
+
+    <div id="emoji"></div>
+
+    <script>
+        
+const emojis = [
+    // Faces and emotions
+    "😀", "😃", "😄", "😁", "😆",
+    "😊", "🙂", "😉", "😍", "🥰",
+    "😎", "🤓", "🤗", "🤔", "🤩",
+
+    // Animals
+    "🐶", "🐱", "🐭", "🐹", "🐰",
+    "🦊", "🐻", "🐼", "🐨", "🐯",
+    "🦁", "🐸", "🐵", "🐧", "🐦",
+
+    // Nature and weather
+    "🌈", "☀️", "🌙", "⭐", "🌟",
+    "⚡", "❄️", "🌊", "🌸", "🌻",
+    "🌹", "🌵", "🍀", "🌳", "🍁",
+
+    // Food and drinks
+    "🍎", "🍌", "🍉", "🍇", "🍓",
+    "🍒", "🍍", "🥑", "🥕", "🌽",
+    "🍕", "🍔", "🍟", "🍿", "🍩",
+
+    // Sports and activities
+    "⚽", "🏀", "🏈", "⚾", "🎾",
+    "🏆", "🥇", "🎯", "🎮", "🎨",
+
+    // Objects and technology
+    "🚀", "✈️", "🚗", "🚲", "🚂",
+    "💡", "💻", "📚", "✏️", "🔭",
+
+    // Symbols and celebrations
+    "❤️", "💙", "💚", "💛", "💜",
+    "🎉", "🎈", "🎁", "🔑", "💎"
+];
+
+
+        let currentEmoji = "";
+
+        function changeEmoji() {
+            let newEmoji;
+
+            // Pick an emoji different from the current one
+            do {
+                newEmoji = emojis[
+                    Math.floor(Math.random() * emojis.length)
+                ];
+            } while (newEmoji === currentEmoji);
+
+            // Display the new emoji
+            document.getElementById("emoji").textContent = newEmoji;
+
+            // Remember the current emoji
+            currentEmoji = newEmoji;
+        }
+    </script>
+
+</body>
+</html>
