@@ -49,11 +49,11 @@
 
 <body>
 
-    <h1>Emoji Popper</h1>
+    <h1>Emoji Randomizer</h1>
 
     <p>Press the button to bring up an emoji.</p>
 
-    <button onclick="changeEmoji()">Press Me!</button>
+    <button onclick="changeEmoji()">New Emoji</button>
 
     <div id="emoji"></div>
 
@@ -99,7 +99,7 @@ const emojis = [
         function changeEmoji() {
             let newEmoji;
 
-            // Pick an emoji different from the current one
+            // replace the current emoji with a new one
             do {
                 newEmoji = emojis[
                     Math.floor(Math.random() * emojis.length)
